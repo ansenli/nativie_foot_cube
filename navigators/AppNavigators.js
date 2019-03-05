@@ -11,11 +11,13 @@ import React from 'react' // 切记只要我们用到react-native中的组件都
 import { Button,Platform,ScrollView,SafeAreaView } from 'react-native'
 import HomePage from '../page/HomePage'
 import Page1 from '../page/Page1'
-import Page2 from '../page/Page2'
+import FlatList from '../page/Page2'
 import Page3 from '../page/Page3'
 import Page4 from '../page/Page4'
 import Page5 from '../page/Page5'
 import Login from '../page/Login'
+import SwipeableFlatListDemo from '../page/SwipeableFlatListDemo'
+import SectionListDemo from '../page/SectionListDemo'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
 
@@ -73,8 +75,8 @@ const AppTopNavigator = createMaterialTopTabNavigator({
       tabBarLabel:'All'
     }
   },
-  Page2:{
-    screen:Page2,
+  FlatList:{
+    screen:FlatList,
     navigationOptions:{
       tabBarLabel:'IOS'
     }
@@ -131,8 +133,8 @@ const AppBottomNavigator = createBottomTabNavigator({
 
     }
   },
-  Page2:{
-    screen:Page2,
+  FlatList:{
+    screen:FlatList,
     navigationOptions:{
       tabBarLabel:'趋势',
       tabBarIcon:({tintColor,focused})=>(
@@ -190,10 +192,22 @@ const AppStack = createStackNavigator({
       title:`${navigation.state.params.name}页面名`
     })
   },
-  Page2:{
-    screen:Page2,
+  FlatList:{
+    screen:FlatList,
     navigationOptions:{ // 在这里定义每个页面的导航数据 静态配置
-      title:'this is page2',
+      title:'this is FlatList',
+    }
+  },
+  SwipeableFlatListDemo:{
+    screen:SwipeableFlatListDemo,
+    navigationOptions:{ // 在这里定义每个页面的导航数据 静态配置
+      title:'this is SwipeableFlatListDemo',
+    }
+  },
+  SectionListDemo:{
+    screen:SectionListDemo,
+    navigationOptions:{ // 在这里定义每个页面的导航数据 静态配置
+      title:'this is SwipeableFlatListDemo',
     }
   },
   Page3:{
